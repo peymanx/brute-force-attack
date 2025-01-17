@@ -14,7 +14,9 @@ This project is related to a YouTube video on the [peymanx](https://www.youtube.
 
 ## Introduction
 
-This repository contains various scripts and tools for performing brute-force attacks on different systems. The primary goal is to demonstrate the vulnerabilities and educate users on the importance of strong passwords and security measures.
+This repository contains various scripts and tools for performing brute-force attacks on different systems. The primary goal is to demonstrate the vulnerabilities and educate users on the importance of strong passwords and security measures.  
+
+This repository contains a list of commonly used [passwords in Iran](./passwords/commons_iranians.txt). It's designed to help developers and security professionals understand password patterns in the region, improve password policies, and enhance security measures
 
 ## Preview
 ![login](https://github.com/user-attachments/assets/075a2c88-b7e9-41a7-8ee4-7d8e8392d867)
