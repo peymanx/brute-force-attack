@@ -1,7 +1,3 @@
-Here's the updated README with the additional resources:
-
----
-
 # Brute-force attack
 
 **Author:** Peyman Majidi Moein (aka Peymanx) and Ai
@@ -92,7 +88,3 @@ if __name__ == '__main__':
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize it further to suit your needs!
