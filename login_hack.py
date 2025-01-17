@@ -18,14 +18,18 @@ def read_passwords(file_path):
 
 def main():
     ip = '127.0.0.1'
-    username = 'peymanx'
+    username = 'peyman'
     password_file = './passwords/common.txt'
 
     passwords = read_passwords(password_file)
     total_passwords = len(passwords)
+    
+    print(f"IP Address: {ip}")
+    print(f"Username: {username}")
+    print(f"Password: **********")
 
     max_password_length = max(len(password) for password in passwords)
-    with tqdm(total=total_passwords, desc="Trying passwords", unit="password") as pbar:
+    with tqdm(total=total_passwords, desc="Trying passwords", unit="p") as pbar:
         for password in passwords:
             padded_password = password.ljust(max_password_length)
             pbar.set_description(f"{Fore.YELLOW}Trying password: {padded_password}{Style.RESET_ALL}")
