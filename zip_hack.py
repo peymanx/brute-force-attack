@@ -24,6 +24,11 @@ def main():
     
     print(f"Compressed file path: {file}")
     print(f"Password: **********")
+    
+    # Check if the Compressed file exists
+    if not os.path.isfile(file):
+        print(f'\n{Fore.RED}Error: The file "{file}" does not exist.{Style.RESET_ALL}')
+        return
 
     max_password_length = max(len(password) for password in passwords)
     with tqdm(total=total_passwords, desc="Trying passwords", unit="password") as pbar:
