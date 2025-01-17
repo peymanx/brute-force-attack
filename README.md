@@ -2,7 +2,7 @@
 
 **Author:** Peyman Majidi Moein (aka Peymanx) and Ai
 
-This project is related to a YouTube video on the [peymanxa](https://www.youtube.com/@peymanxa) channel.
+This project is related to a YouTube video on the [peymanx](https://www.youtube.com/@peymanx) channel.
 
 ## Table of Contents
 
