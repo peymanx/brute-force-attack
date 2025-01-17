@@ -1,3 +1,7 @@
+Here's the updated README with the additional resources:
+
+---
+
 # Brute-force attack
 
 **Author:** Peyman Majidi Moein (aka Peymanx) and Ai
@@ -9,6 +13,7 @@ This project is related to a YouTube video on the [peymanx](https://www.youtube.
 - [Introduction](#introduction)
 - [Sample Code](#sample-code)
 - [Content List](#content-list)
+- [Resources](#resources)
 - [License](#license)
 
 ## Introduction
@@ -17,7 +22,6 @@ This repository contains various scripts and tools for performing brute-force at
 
 ## Preview
 ![login](https://github.com/user-attachments/assets/075a2c88-b7e9-41a7-8ee4-7d8e8392d867)
-
 
 ## Sample Code
 
@@ -78,7 +82,17 @@ if __name__ == '__main__':
 - **zip_hack.py**
   - Compressed file password hack 
 
+## Resources
+
+- [SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments](https://github.com/danielmiessler/SecLists)
+- [Persian Words Jadi :)](https://github.com/jadijadi/persianwords)
+- [Iranian-Password-list](https://github.com/Dih4v/Iranian-Password-list)
+- [Wikipedia](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
+
+Feel free to customize it further to suit your needs!
