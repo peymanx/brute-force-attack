@@ -6,7 +6,7 @@ from colorama import Fore, Style, init
 init()
 
 def connect_to_zip(file, password):
-    command = f'7z x "{file}" -p"{password}" -y 2> nul > %1'
+    command = f'7z x "{file}" -p"{password}" -y >nul 2>&1'
     result = os.system(command)
     return result == 0
 
@@ -17,10 +17,13 @@ def read_passwords(file_path):
 
 def main():
     file = "path/to/file.zip"
-    password_file = './passwords/common.txt'
+    password_file = './passwords/10k.txt'
 
     passwords = read_passwords(password_file)
     total_passwords = len(passwords)
+    
+    print(f"Compressed file path: {file}")
+    print(f"Password: **********")
 
     max_password_length = max(len(password) for password in passwords)
     with tqdm(total=total_passwords, desc="Trying passwords", unit="password") as pbar:
