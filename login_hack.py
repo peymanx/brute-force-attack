@@ -1,10 +1,12 @@
 import os
 from tqdm import tqdm
 from colorama import Fore, Style, init
+import banners
 
 # Initialize colorama
 init()
 os.system('title @peymanx Windows Login Password Brute-force attack')
+banners.windows_login()
 
 def connect_to_smb(ip, username, password):
     command = f'net use \\\\{ip} /user:{username} {password} >nul 2>&1'

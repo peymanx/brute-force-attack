@@ -2,10 +2,13 @@ import os
 from tqdm import tqdm
 from colorama import Fore, Style, init
 import subprocess
+import banners
 
 # Initialize colorama
 init()
 os.system('title @peymanx Wi-Fi Password Brute-force attack')
+banners.wifi_modem()
+
 
 def create_wifi_profile(ssid, password):
     profile_content = f'''<?xml version="1.0"?>

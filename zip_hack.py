@@ -1,9 +1,10 @@
 import os
 from tqdm import tqdm
 from colorama import Fore, Style, init
-
+import banners
 # Initialize colorama
 init()
+banners.key()
 
 def connect_to_zip(file, password):
     command = f'7z x "{file}" -p"{password}" -y >nul 2>&1'
