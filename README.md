@@ -20,7 +20,6 @@ This repository contains various scripts and tools for performing brute-force at
 This repository contains a list of commonly used [passwords in Iran](./passwords/commons_iranians.txt). It's designed to help developers and security professionals understand password patterns in the region, improve password policies, and enhance security measures
 
 ## Preview
-![login](https://github.com/user-attachments/assets/075a2c88-b7e9-41a7-8ee4-7d8e8392d867)
 
 ## Sample Code
 
@@ -73,13 +72,22 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## TODO
 
-- [x] Windows Login (smb) Brute-force
-- [x] WiFi Modem Password Brute-force
-- [ ] SSH Brute-force
-- [x] Compress file (zip,rar,...) Brute-force
-- [ ] Email Brute-force
-- [ ] PDF Lock Brute-force
-- [ ] RDP Brute-force
-- [ ] SQL Server Connection Strings Brute-force
-- [ ] MySql Brute-force
-- [ ] Telnet Brute-force
+- [x] **Windows Login Authentication (SMB) Brute-force**  
+- [x] **WiFi Network Password Cracking (Brute-force)**  
+- [ ] **SSH Remote Login Brute-force Attack**  
+- [x] **Encrypted Archive (ZIP, RAR, etc.) Password Cracking**  
+- [ ] **Email Account Credential Brute-force**  
+- [ ] **PDF File Password Recovery (Brute-force)**  
+- [ ] **RDP (Remote Desktop Protocol) Credential Brute-force**  
+- [ ] **SQL Server Database Login Brute-force**  
+- [ ] **MySQL Database Authentication Brute-force**  
+- [ ] **Telnet Service Credential Brute-force**  
+- [ ] **FTP Server Login Brute-force**  
+- [ ] **HTTP/HTTPS Basic Authentication Brute-force**  
+- [ ] **LDAP Directory Login Brute-force**  
+- [ ] **VNC (Virtual Network Computing) Login Brute-force**  
+- [ ] **Oracle Database Credential Brute-force**  
+- [ ] **VPN Connection Authentication Brute-force**  
+- [ ] **WordPress Admin Panel or Joomla CMS Admin Login Brute-force**
+- [ ] TODO for updating TODOs 
+
