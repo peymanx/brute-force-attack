@@ -1,50 +1,44 @@
 import os
+import shutil
 from tqdm import tqdm
-from colorama import Fore, Style, init
-import banners
-# Initialize colorama
-init()
-banners.key()
+import banner
 
-def connect_to_zip(file, password):
-    command = f'7z x "{file}" -p"{password}" -y >nul 2>&1'
+# مسیر فایل متنی که پسوردها در آن قرار دارند
+password_file_path = 'passwords.txt'
+
+# دریافت مسیر فایل فشرده از کاربر
+banner.key()
+archive_path = input("Enter the path to the archive file: ")
+
+# باز کردن فایل و خواندن پسوردها
+with open(password_file_path, 'r') as file:
+    passwords = file.readlines()
+
+# متغیر کمکی برای بررسی پیدا شدن پسورد
+password_found = False
+
+# تابع برای نمایش باکس
+def print_box(message):
+    columns = shutil.get_terminal_size().columns
+    box_width = columns - 4
+    print()
+    print(f'╔{"═" * box_width}╗')
+    print(f'║{" " * box_width}║')
+    print(f'║{message.center(box_width)}║')
+    print(f'║{" " * box_width}║')
+    print(f'╚{"═" * box_width}╝')
+
+# اجرای دستور برای هر پسورد تا زمانی که اتصال موفقیت‌آمیز باشد
+for password in tqdm(passwords, desc="Trying passwords"):
+    password = password.strip()  # حذف کاراکترهای اضافی مانند \n
+    tqdm.write(f'Trying password: {password}')  # نمایش پسوردی که امتحان می‌شود
+    command = f'c:\\7-Zip\\7z.exe x \""{archive_path}"\" -p{password} -y >nul 2>&1'
     result = os.system(command)
-    return result == 0
 
-def read_passwords(file_path):
-    with open(file_path, 'r') as file:
-        passwords = file.readlines()
-    return [password.strip() for password in passwords]
+    if result == 0:  # اگر استخراج موفقیت‌آمیز بود
+        print_box(f'Password found: {password}')
+        password_found = True
+        break
 
-def main():
-    file = "path/to/file.zip"
-    password_file = './passwords/10k.txt'
-
-    passwords = read_passwords(password_file)
-    total_passwords = len(passwords)
-    
-    print(f"Compressed file path: {file}")
-    print(f"Password: **********")
-    
-    # Check if the Compressed file exists
-    if not os.path.isfile(file):
-        print(f'\n{Fore.RED}Error: The file "{file}" does not exist.{Style.RESET_ALL}')
-        return
-
-    max_password_length = max(len(password) for password in passwords)
-    with tqdm(total=total_passwords, desc="Trying passwords", unit="password") as pbar:
-        for password in passwords:
-            padded_password = password.ljust(max_password_length)
-            pbar.set_description(f"{Fore.YELLOW}Trying password: {padded_password}{Style.RESET_ALL}")
-            if connect_to_zip(file, password):
-                print(f'\n{Fore.GREEN}{"*"*70}')
-                print(f'{Fore.GREEN}Successfully extract!')  # Blinking text
-                print(f'{Fore.GREEN}Password: \'\033[5m{password}\033[0m{Fore.GREEN}\'')  # Blinking text
-                print(f'{Fore.GREEN}{"*"*70}{Style.RESET_ALL}\n')
-                break
-            pbar.update(1)
-        else:
-            print(f'\n{Fore.RED}Password not found{Style.RESET_ALL}')
-
-if __name__ == '__main__':
-    main()
+if not password_found:
+    print_box('Password not found!')
