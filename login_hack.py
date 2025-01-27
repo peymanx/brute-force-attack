@@ -1,15 +1,15 @@
 import os
 import shutil
 from tqdm import tqdm
+import banner
 
 # مسیر فایل متنی که پسوردها در آن قرار دارند
 password_file_path = 'passwords.txt'
 
-# آدرس IP که می‌خواهید به آن متصل شوید
-ip_address = '127.0.0.1'
-
-# نام کاربری مورد نظر
-username = 'ali'
+# دریافت آدرس IP و نام کاربری از کاربر
+banner.windows_login()
+ip_address = input("Enter the IP address: ")
+username = input("Enter the username: ")
 
 # باز کردن فایل و خواندن پسوردها
 with open(password_file_path, 'r') as file:
