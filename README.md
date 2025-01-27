@@ -74,7 +74,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [x] **Windows Login Authentication (SMB) Brute-force**  
 - [x] **WiFi Network Password Cracking (Brute-force)**  
-- [ ] **SSH Remote Login Brute-force Attack**  
+- [x] **SSH Remote Login Brute-force Attack**  
 - [x] **Encrypted Archive (ZIP, RAR, etc.) Password Cracking**  
 - [ ] **Email Account Credential Brute-force**  
 - [ ] **PDF File Password Recovery (Brute-force)**  
