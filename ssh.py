@@ -7,7 +7,7 @@ import banners
 password_file_path = 'passwords.txt'
 
 # دریافت اطلاعات SSH از کاربر
-banner.anonymous()
+banners.anonymous()
 hostname = input("Enter the SSH hostname: ")
 port = int(input("Enter the SSH port (default 22): ") or 22)
 username = input("Enter the SSH username: ")

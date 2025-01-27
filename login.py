@@ -7,7 +7,7 @@ import banners
 password_file_path = 'passwords.txt'
 
 # دریافت آدرس IP و نام کاربری از کاربر
-banner.windows_login()
+banners.windows_login()
 ip_address = input("Enter the IP address: ")
 username = input("Enter the username: ")
 

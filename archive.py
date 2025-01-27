@@ -7,7 +7,7 @@ import banners
 password_file_path = 'passwords.txt'
 
 # دریافت مسیر فایل فشرده از کاربر
-banner.key()
+banners.key()
 archive_path = input("Enter the path to the archive file: ")
 
 # باز کردن فایل و خواندن پسوردها

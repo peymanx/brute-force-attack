@@ -7,7 +7,7 @@ import banners
 password_file_path = 'passwords.txt'
 
 # دریافت نام شبکه (SSID) و نام کاربری از کاربر
-banner.wifi_modem()
+banners.wifi_modem()
 ssid = input("Enter the SSID: ")
 
 # باز کردن فایل و خواندن پسوردها
