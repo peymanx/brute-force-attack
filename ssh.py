@@ -1,7 +1,7 @@
 import paramiko
 import shutil
 from tqdm import tqdm
-import banner
+import banners
 
 # مسیر فایل متنی که پسوردها در آن قرار دارند
 password_file_path = 'passwords.txt'
