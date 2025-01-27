@@ -8,7 +8,6 @@ This project is related to a YouTube video on the [peymanx](https://www.youtube.
 
 - [Introduction](#introduction)
 - [Sample Code](#sample-code)
-- [Content List](#content-list)
 - [Resources](#resources)
 - [License](#license)
 - [TODO](#todo)
@@ -48,21 +47,11 @@ def connect_to_zip(file, password):
 
 ```
 
-## Content List
-
-- **passwords**
-  - More password samples added (Jan 17, 2025)
-- **login_hack.py**
-  - Windows login hack 
-- **wifi_hack.py**
-  - WiFi hack 
-- **zip_hack.py**
-  - Compressed file password hack 
 
 ## Resources
 
 - [SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments](https://github.com/danielmiessler/SecLists)
-- [Persian Words Jadi :)](https://github.com/jadijadi/persianwords)
+- [Persian Words Jadi 😍](https://github.com/jadijadi/persianwords)
 - [Iranian-Password-list](https://github.com/Dih4v/Iranian-Password-list)
 - [Wikipedia](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords)
 
@@ -74,10 +63,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [x] **Windows Login Authentication (SMB) Brute-force**  
 - [x] **WiFi Network Password Cracking (Brute-force)**  
-- [x] **SSH Remote Login Brute-force Attack**  
 - [x] **Encrypted Archive (ZIP, RAR, etc.) Password Cracking**  
 - [ ] **Email Account Credential Brute-force**  
 - [ ] **PDF File Password Recovery (Brute-force)**  
+- [x] **SSH Remote Login Brute-force Attack**  
 - [ ] **RDP (Remote Desktop Protocol) Credential Brute-force**  
 - [ ] **SQL Server Database Login Brute-force**  
 - [ ] **MySQL Database Authentication Brute-force**  
@@ -89,5 +78,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] **Oracle Database Credential Brute-force**  
 - [ ] **VPN Connection Authentication Brute-force**  
 - [ ] **WordPress Admin Panel or Joomla CMS Admin Login Brute-force**
-- [ ] TODO for updating TODOs 
+- [ ] TODO for updating TODOs ? 
+- [ ] Error ckecking and validation
+- [ ] Add GUIs: Graphical User Interface
 
