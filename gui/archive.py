@@ -50,44 +50,44 @@ def start_bruteforce():
 # تابع برای انتخاب فایل فشرده
 def select_archive():
     global archive_path
-    archive_path = filedialog.askopenfilename(title="انتخاب فایل فشرده", filetypes=[("Archive Files", "*.zip *.7z *.rar")])
+    archive_path = filedialog.askopenfilename()
     archive_label.config(text=f"فایل فشرده انتخاب شده: {archive_path}")
 
 # تابع برای انتخاب فایل پسوردها
 def select_password_file():
     global password_file_path
-    password_file_path = filedialog.askopenfilename(title="انتخاب فایل پسورد", filetypes=[("Text Files", "*.txt")])
+    password_file_path = filedialog.askopenfilename()
     password_label.config(text=f"فایل پسورد انتخاب شده: {password_file_path}")
 
 # ایجاد رابط گرافیکی
 root = tk.Tk()
 root.title("Archive Brute-force by @peymanx")
-root.configure(bg="black")
+root.configure(bg="#550b9c")
 
 # ایجاد و تنظیم ویجت‌های رابط گرافیکی
-image_label = tk.Label(root, bg="black")
+image_label = tk.Label(root, bg="#550b9c")
 image_label.pack(pady=10)
 
 # بارگذاری عکس
-image = tk.PhotoImage(file="./images/login_banner.png")
+image = tk.PhotoImage(file="./images/archive_banner.png")
 image_label.config(image=image)
 
 archive_button = tk.Button(root, text="مسیر فایل فشرده", command=select_archive, bg="white", fg="black", font=("Helvetica", 12))
 archive_button.pack(pady=10)
 
-archive_label = tk.Label(root, text="No file selected", bg="black", fg="white", font=("Helvetica", 10))
+archive_label = tk.Label(root, text="No file selected", bg="#550b9c", fg="white", font=("Helvetica", 10))
 archive_label.pack(pady=5)
 
 password_button = tk.Button(root, text="مسیر بانک پسوردها", command=select_password_file, bg="white", fg="black", font=("Helvetica", 12))
 password_button.pack(pady=10)
 
-password_label = tk.Label(root, text="No file selected", bg="black", fg="white", font=("Helvetica", 10))
+password_label = tk.Label(root, text="No file selected", bg="#550b9c", fg="white", font=("Helvetica", 10))
 password_label.pack(pady=5)
 
 log_text = scrolledtext.ScrolledText(root, width=80, height=10, bg="black", fg="white", font=("Helvetica", 10))
 log_text.pack(pady=20)
 
-start_button = tk.Button(root, text="Brute-force شروع حمله ", command=start_bruteforce, bg="white", fg="black", font=("Helvetica", 12))
+start_button = tk.Button(root, text="Brute-force شروع حمله  🔑 ", command=start_bruteforce, bg="#fcad0e", fg="black", font=("Helvetica", 12))
 start_button.pack(pady=10)
 
 # ایجاد و تنظیم ویجت progress bar
