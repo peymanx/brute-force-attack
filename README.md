@@ -24,26 +24,6 @@ This repository contains a list of commonly used [passwords in Iran](./passwords
 
 ```python
 
-def connect_to_smb(ip, username, password):
-    command = f'net use \\\\{ip} /user:{username} {password} >nul 2>&1'
-    result = os.system(command)
-    return result == 0
-
-
-def connect_to_wifi(ssid, password):
-    profile_path = create_wifi_profile(ssid, password)
-    add_profile_command = f'netsh wlan add profile filename="{profile_path}"'
-    connect_command = f'netsh wlan connect name="{ssid}"'
-    os.system(add_profile_command)
-    result = os.system(connect_command)
-    os.remove(profile_path)
-    return result == 0
-
-def connect_to_zip(file, password):
-    command = f'7z x "{file}" -p"{password}" -y >nul 2>&1'
-    result = os.system(command)
-    return result == 0
-
 
 ```
 
