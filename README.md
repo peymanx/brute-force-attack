@@ -61,12 +61,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## TODO
 
-- [x] **Windows Login Authentication (SMB) Brute-force**  
-- [x] **WiFi Network Password Cracking (Brute-force)**  
-- [x] **Encrypted Archive (ZIP, RAR, etc.) Password Cracking**  
+- [ ] **Windows Login Authentication (SMB) Brute-force**  
+- [ ] **WiFi Network Password Cracking (Brute-force)**  
+- [ ] **Encrypted Archive (ZIP, RAR, etc.) Password Cracking**  
 - [ ] **Email Account Credential Brute-force**  
 - [ ] **PDF File Password Recovery (Brute-force)**  
-- [x] **SSH Remote Login Brute-force Attack**  
+- [ ] **SSH Remote Login Brute-force Attack**  
 - [ ] **RDP (Remote Desktop Protocol) Credential Brute-force**  
 - [ ] **SQL Server Database Login Brute-force**  
 - [ ] **MySQL Database Authentication Brute-force**  
