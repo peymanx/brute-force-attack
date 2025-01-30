@@ -3825,6 +3825,7 @@ C.Ronaldo
 CRISTIANORONALDO
 lionelmessi
 LIONELMESSI
+luckystar
 messi
 MESSI
 lMESSI
@@ -6699,6 +6700,7 @@ LiverPool
 Liverpool
 LIVERPOOL
 parissaintgerman
+peyman2020
 ParisSaintGerman
 PARISSAINTGERMAN
 Parissaintgerman

@@ -1,0 +1,4 @@
+paramiko
+shutil
+tqdm
+banner
